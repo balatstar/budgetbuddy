@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :groups do
-    resources :payments, only: [:index, :new, :create]
+    resources :payments, only: [:index, :new, :create, :destroy]
   end
 
-  resources :payments, only: [:index, :show, :new, :create]
+  resources :payments, only: [:index, :show, :new, :create, :destroy]
   resources :users
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

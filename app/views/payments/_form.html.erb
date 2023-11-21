@@ -21,6 +21,9 @@
     <%= form.text_field :amount %>
   </div>
 
+  <%= form.label :group_ids, style: "display: block" %>
+<%= form.collection_select :group_ids, current_user.groups, :id, :name, {}, multiple: true %>
+
   <div>
     <%= form.submit %>
   </div>

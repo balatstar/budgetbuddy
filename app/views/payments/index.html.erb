@@ -1,14 +1,28 @@
-<p style="color: green"><%= notice %></p>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
-<h1>Payments</h1>
+<h1>Payments for <%= @group.name %></h1>
 
-<div id="payments">
-  <% @payments.each do |payment| %>
-    <%= render payment %>
-    <p>
-      <%= link_to "Show this payment", payment %>
-    </p>
-  <% end %>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @payments.each do |payment| %>
+      <tr>
+        <td><%= payment.name %></td>
+        <td><%= payment.amount %></td>
+        <td>
+        <%= button_to 'Delete', payment, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
+<%= link_to 'Back to Groups', groups_path %> |
 <%= link_to "New payment", new_payment_path %>

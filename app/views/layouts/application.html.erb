@@ -11,6 +11,10 @@
   </head>
 
   <body>
+  <%= form_tag destroy_user_session_path, method: :delete do %>
+    <%= csrf_meta_tags %>
+    <%= submit_tag 'Logout' %>
+  <% end %>
     <%= yield %>
   </body>
 </html>
