@@ -42,7 +42,7 @@ img {
 }
 
 .navbar-action {
-  width: 1.5em
+  width: 1.5em;
 }
 
 .navbar-toggler {
@@ -84,6 +84,32 @@ img {
   padding: 0;
 }
 
+.content-button a {
+  text-align: center;
+}
+
+.devise-links a {
+  color: #aaa;
+}
+
+.payments-container-edit a {
+  color: #aaa;
+}
+
+.group-item-name a {
+  margin-left: 25px;
+  color: #aaa;
+}
+
+.group-item-action a {
+  color: #aaa;
+}
+
+.home-link a:hover,
+.content-button a:hover {
+  background-color: #8ad457;
+}
+
 .home-container {
   margin: 0;
   padding: 0 0 50px 0;
@@ -113,15 +139,6 @@ img {
   text-transform: uppercase;
   text-decoration: none;
   border: none;
-}
-
-.home-link a:hover,
-.content-button a:hover {
-  background-color: #8ad457;
-}
-
-.content-button a {
-  text-align: center;
 }
 
 .content-button button {
@@ -177,10 +194,6 @@ img {
   text-align: center;
 }
 
-.devise-links a {
-  color: #aaa;
-}
-
 .cancel-link button {
   margin: 10px;
   background-color: transparent;
@@ -207,10 +220,6 @@ img {
   position: absolute;
   top: 10px;
   text-align: right;
-}
-
-.payments-container-edit a {
-  color: #aaa;
 }
 
 .payments-items-container {
@@ -248,11 +257,6 @@ a .group-item-container {
   line-height: 2;
 }
 
-.group-item-name a {
-  margin-left: 25px;
-  color: #aaa;
-}
-
 .group-item-total {
   font-weight: 700;
   text-align: right;
@@ -265,8 +269,4 @@ a .group-item-total {
 
 .group-item-action {
   text-align: center;
-}
-
-.group-item-action a {
-  color: #aaa;
 }

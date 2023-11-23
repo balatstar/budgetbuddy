@@ -25,8 +25,8 @@ RSpec.describe Group, type: :model do
     let(:group) { Group.create(name: 'Test Group', icon: 'icon.png', user:) }
 
     it 'returns the total amount of payments for the group' do
-      payment1 = Payment.create(name: 'Payment 1', amount: 50, author: user, group_ids: [group.id])
-      payment2 = Payment.create(name: 'Payment 2', amount: 30, author: user, group_ids: [group.id])
+      Payment.create(name: 'Payment 1', amount: 50, author: user, group_ids: [group.id])
+      Payment.create(name: 'Payment 2', amount: 30, author: user, group_ids: [group.id])
 
       expect(group.total_payments_amount).to eq(80)
     end
