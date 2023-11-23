@@ -42,7 +42,7 @@ RSpec.feature 'Payments', type: :feature do
 
   # Helper method to create a group associated with the given user
   def create_group(user)
-    Group.create(name: 'Test Group', icon: 'test_icon', user: user)
+    Group.create(name: 'Test Group', icon: 'test_icon', user:)
   end
 
   # Helper method to create a payment associated with the given group and user

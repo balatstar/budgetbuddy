@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   describe 'User validations' do
     it 'is valid with a name, email, and password' do
       user = User.create(name: 'Roy Batty', email: 'roy@replicant.net', password: 'Password')

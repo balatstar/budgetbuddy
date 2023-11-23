@@ -35,7 +35,6 @@ RSpec.feature 'Groups', type: :feature do
 
   # Helper method to create a group associated with the given user
   def create_group(user)
-    group = Group.create(name: 'Test Group', icon: 'icon.png', user: user)
-    group
+    Group.create(name: 'Test Group', icon: 'icon.png', user:)
   end
 end

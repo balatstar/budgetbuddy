@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Payment, type: :model do
-
   describe 'Payment validations' do
     let(:user) { User.create(name: 'Test User', email: 'test@example.com', password: 'password') }
-    let(:group) { Group.create(name: 'Test Group', icon: 'icon.png', user: user) }
+    let(:group) { Group.create(name: 'Test Group', icon: 'icon.png', user:) }
 
     it 'is valid with a name, amount, author, and group_ids' do
       payment = Payment.create(name: 'Test Payment', amount: 50, author: user, group_ids: [group.id])
