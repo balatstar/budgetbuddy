@@ -105,11 +105,6 @@ img {
   color: #aaa;
 }
 
-.home-link a:hover,
-.content-button a:hover {
-  background-color: #8ad457;
-}
-
 .home-container {
   margin: 0;
   padding: 0 0 50px 0;
@@ -139,6 +134,11 @@ img {
   text-transform: uppercase;
   text-decoration: none;
   border: none;
+}
+
+.home-link a:hover,
+.content-button a:hover {
+  background-color: #8ad457;
 }
 
 .content-button button {
