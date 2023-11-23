@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   resources :groups do
-    resources :payments, only: [:index, :new, :create, :destroy]
+    resources :payments, only: [:index, :show, :new, :create, :destroy]
   end
 
   resources :payments, only: [:index, :show, :new, :create, :destroy]
