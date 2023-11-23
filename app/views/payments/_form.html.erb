@@ -12,17 +12,16 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder: 'Payment name' %>
   </div>
 
   <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.text_field :amount %>
+    <%= form.text_field :amount, placeholder: 'Amount' %>
   </div>
-
-  <%= form.label :group_ids, style: "display: block" %>
-<%= form.collection_select :group_ids, current_user.groups, :id, :name, {}, multiple: true %>
+  <div>
+  <%= label_tag 'Select Groups (Ctrl-click to select multiple):' %>
+  <%= form.collection_select :group_ids, current_user.groups, :id, :name, {}, multiple: true %>
+  </div>
 
   <div>
     <%= form.submit %>

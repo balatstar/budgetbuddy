@@ -1,28 +1,43 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<div class="container">
+<span class="notice"><%= notice %></span>
+<span class="alert"><%= alert %></span>
 
-<h1>Payments for <%= @group.name %></h1>
+<div class="payments-container row">
+  <div class="col-3 col-lg-2 group-item-icon"> 
+    <img src="<%= @group.icon %>">
+  </div>
+  <div class="col-6 col-lg-7 group-item-name">
+  <%= @group.name %> 
+  </div>
+  <div class="col-3 group-item-total">
+    <%= number_to_currency(@total_payments_amount) %>
+  </div>
+  <div class="payments-container-edit">
+    <%= link_to edit_group_path(@group) do %><i class="fa-solid fa-pen-to-square"></i><% end %>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @payments.each do |payment| %>
-      <tr>
-        <td><%= payment.name %></td>
-        <td><%= payment.amount %></td>
-        <td>
-        <%= button_to 'Delete', payment, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% if @payments.any? %>
+<div class="payments-items-container">
+  <% @payments.each do |payment| %>
+    <div class="payments-items row">
+      <div class="col-4 group-item-name"><%= payment.name %></div>
+      <div class="col-4 group-item-date"><%= payment.created_at.strftime('%m/%d/%Y') %></div>
+      <div class="col-3 group-item-total"><%= number_to_currency(payment.amount) %></div>
+      <div class="col-1 group-item-action">
+      <%= link_to payment, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="fa-solid fa-trash-can"></i>
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<% else %>
+  <p>No payments available for this group.</p>
+<% end %>
 
-<%= link_to 'Back to Groups', groups_path %> |
-<%= link_to "New payment", new_payment_path %>
+<div class="content-button">
+  <%= link_to "Add a new payment", new_payment_path %>
+</div>
+<div class="devise-links"><%= link_to 'Back to Categories', groups_path %></div>
+</div>

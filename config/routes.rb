@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'public_pages/home'
+  authenticated :user do
+    root 'groups#index', as: :authenticated_root
+  end
+  
+  unauthenticated do
+    root 'public_pages#home', as: :unauthenticated_root
+  end
+  
   devise_for :users
   resources :groups do
     resources :payments, only: [:index, :new, :create, :destroy]

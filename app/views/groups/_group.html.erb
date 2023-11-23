@@ -1,12 +1,17 @@
-<div id="<%= dom_id group %>">
-  <p>
-    <strong>Name:</strong>
+<%= link_to group_payments_path(group) do %>
+<div class="group-item-container row" id="<%= dom_id group %>">
+  <div class="col-3 col-lg-2 group-item-icon">
+    <img src="<%= group.icon %>">
+  </div>
+  <div class="col-6 col-lg-7 group-item-name">
     <%= group.name %>
-  </p>
-
-  <p>
-    <strong>Icon:</strong>
-    <%= group.icon %>
-  </p>
-
+  </div>
+  <div class="col-3 group-item-total">
+  <% if defined?(total_payments_amount) %>
+    <%= number_to_currency(total_payments_amount) %>
+    <% else %>
+    <%= number_to_currency(@total_payments_amount) %>
+  <% end %>
+  </div>
 </div>
+<% end %>
