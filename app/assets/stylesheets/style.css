@@ -169,12 +169,6 @@ main {
   background-color: #8ad457;
 }
 
-.sticky-wrapper a:hover,
-.sticky-wrapper input[type=submit]:hover,
-.sticky-wrapper button:hover {
-  background-color: #8ad457;
-}
-
 .content-button button {
   margin-top: 50px;
 }
@@ -233,6 +227,12 @@ main {
   background-color: transparent;
   border: none;
   color: red;
+}
+
+.sticky-wrapper a:hover,
+.sticky-wrapper input[type=submit]:hover,
+.sticky-wrapper button:hover {
+  background-color: #8ad457;
 }
 
 .group-item-container,
