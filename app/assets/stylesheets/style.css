@@ -156,7 +156,7 @@ main {
   padding: 20px;
   width: 100%;
   max-width: 373px;
-  background-color: #5fb523;
+  background-color: #3778c2;
   color: #fff;
   font-size: 18px;
   text-transform: uppercase;
@@ -166,6 +166,12 @@ main {
 
 .home-link a:hover,
 .content-button a:hover {
+  background-color: #8ad457;
+}
+
+.sticky-wrapper a:hover,
+.sticky-wrapper input[type=submit]:hover,
+.sticky-wrapper button:hover {
   background-color: #8ad457;
 }
 
@@ -195,7 +201,7 @@ main {
 .form-container input[type=submit] {
   margin: 50px auto 10px;
   padding: 20px;
-  background-color: #5fb523;
+  background-color: #3778c2;
   color: #fff;
   font-size: 18px;
   text-transform: uppercase;
