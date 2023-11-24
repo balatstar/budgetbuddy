@@ -1,0 +1,10 @@
+<div class="payments-container row" id="<%= dom_id payment %>">
+  <div class="col-6 group-item-name">
+    <%= payment.name %>
+  </div>
+
+  <div class="col-6 group-item-total">
+    <%= number_to_currency(payment.amount) %>
+  </div>
+
+</div>

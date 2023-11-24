@@ -1,0 +1,13 @@
+<div class="container">
+<span class="notice"><%= notice %></span>
+<span class="alert"><%= alert %></span>
+
+<div id="groups">
+  <% @groups.each_with_index do |group, index| %>
+    <%= render group, total_payments_amount: @total_payments_amounts[index] %>
+  <% end %>
+</div>
+</div>
+<div class="sticky-wrapper">
+  <%= link_to "Add new category", new_group_path %>
+</div>

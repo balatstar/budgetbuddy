@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Budget Buddy</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag 'BB-favicon.png' %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script defer src="https://kit.fontawesome.com/e699aa5ef8.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body>
+  <div class="header-wrapper">
+    <header class="container">
+    <nav class="navbar bg-body-tertiary navbar-dark">
+    <div class="container-fluid">
+      <% if (controller_name == 'groups' && action_name == 'index') || (controller_name == 'public_pages' && action_name == 'home') %>
+      <div class="navbar-action"></div>
+      <% else %>
+        <% if (controller_name == 'payments' && action_name == 'new') || (controller_name == 'groups' && action_name == 'edit') %>
+        <div class="navbar-action"><%= link_to(:back) do %><i class="fa-solid fa-arrow-left"></i><% end %></div>
+        <% else %>
+        <div class="navbar-action"><a href="/"><i class="fa-solid fa-arrow-left"></i></a></div>
+        <% end %>
+      <% end %>
+      <h1 class="navbar-brand"><%= @page_title || 'Budget Buddy' %></h1>
+      <% if user_signed_in? %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+          <%= link_to 'Update Profile', edit_registration_path(current_user) %>
+          </li>
+          <li class="nav-item">
+            <%= form_tag destroy_user_session_path, method: :delete do %>
+            <%= csrf_meta_tags %>
+            <%= submit_tag 'Logout' %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <% end %>
+    </div>
+    </nav>
+    </header>
+  </div>
+  <div class="main-wrapper">
+    <main>
+      <%= yield %>
+    </main>
+  </div>
+  </body>
+</html>

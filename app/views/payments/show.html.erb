@@ -1,0 +1,12 @@
+<div class="container">
+<span class="notice"><%= notice %></span>
+<span class="alert"><%= alert %></span>
+
+<%= render @payment %>
+
+<div class="devise-links"><%= link_to "Back to Category", :back %></div>
+
+</div>
+<div class="sticky-wrapper">
+  <%= button_to "Destroy this payment", @payment, method: :delete %>
+</div>
