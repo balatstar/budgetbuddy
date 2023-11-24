@@ -35,9 +35,8 @@
 <% else %>
   <p>No payments available for this group.</p>
 <% end %>
-
-<div class="content-button">
-<%= link_to "Add a new payment", new_group_payment_path(@group) %>
-</div>
 <div class="devise-links"><%= link_to 'Back to Categories', groups_path %></div>
+</div>
+<div class="sticky-wrapper">
+<%= link_to "Add a new payment", new_group_payment_path(@group) %>
 </div>

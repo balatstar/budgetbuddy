@@ -4,10 +4,9 @@
 
 <%= render @payment %>
 
-<div class="content-button">
-  <%= button_to "Destroy this payment", @payment, method: :delete %>
-</div>
-
 <div class="devise-links"><%= link_to "Back to Category", :back %></div>
 
+</div>
+<div class="sticky-wrapper">
+  <%= button_to "Destroy this payment", @payment, method: :delete %>
 </div>

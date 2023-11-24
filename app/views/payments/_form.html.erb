@@ -1,29 +1,30 @@
 <%= form_with(model: payment) do |form| %>
-  <% if payment.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+  <div class="form-container">
+    <% if payment.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
 
-      <ul>
-        <% payment.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% payment.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= form.text_field :name, placeholder: 'Payment name' %>
     </div>
-  <% end %>
 
-  <div>
-    <%= form.text_field :name, placeholder: 'Payment name' %>
+    <div>
+      <%= form.text_field :amount, placeholder: 'Amount' %>
+    </div>
+    <div>
+    <%= label_tag 'Select Groups (Ctrl-click to select multiple):' %>
+    <%= form.collection_select :group_ids, current_user.groups, :id, :name, {}, multiple: true %>
+    </div>
   </div>
-
-  <div>
-    <%= form.text_field :amount, placeholder: 'Amount' %>
-  </div>
-  <div>
-  <%= label_tag 'Select Groups (Ctrl-click to select multiple):' %>
-  <%= form.collection_select :group_ids, current_user.groups, :id, :name, {}, multiple: true %>
-  </div>
-
-  <div>
+  <div class="sticky-wrapper">
     <%= form.submit %>
   </div>
 <% end %>
